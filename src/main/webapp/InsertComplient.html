@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>InsertComplient</title>
+    <style>
+        input,
+        textarea {
+            width: 300px;
+            height: 20px;
+        }
+
+        #content {
+            width: 300px;
+            height: 100px;  
+            font-size: 16px;
+        }
+
+        select {
+            width: 300px;
+            height: 20px;
+        }
+        form{
+            text-align: center;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <form method="get" action="InsertComplient" accept-charset="UTF-8">
+       <span>聯絡人</span> <br><input type="text" placeholder="請輸入聯絡人" name="customerName"><br>
+       <span>電子郵件</span> <br><input type="text" placeholder="請輸入電子郵件" name="email"><br>
+       <span>問題類型</span> <br><select name="complaintID">
+            <option value="member">帳戶問題</option>
+            <option value="purchase">購買問題</option>
+            <option value="order">訂單問題</option>
+            <option value="service">服務問題</option>
+            <option value="dispute">消費爭議</option>
+            <option value="forum">論壇問題</option>
+            <option value="other">其他</option>
+        </select><br>
+        <span>標題</span> <br><input type="text" placeholder="請輸入標題" name="title"><br>
+        <span>問題說明</span> <br><textarea id="content" placeholder="請輸入問題說明" name="content"></textarea><br>
+        <button>送出</button>
+    </form>
+
+    <script>
+        var textarea = document.getElementById("content");
+        textarea.focus();
+        textarea.setSelectionRange(0, 0);
+    </script>
+
+</body>
+
+</html>
