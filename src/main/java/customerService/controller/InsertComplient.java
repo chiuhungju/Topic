@@ -28,7 +28,7 @@ public class InsertComplient extends HttpServlet {
     
     CustomerServiceDAO cs=new CustomerServiceDAO(conn);
     
-    SimpleDateFormat ft = new SimpleDateFormat ( " yyyy-MM-dd hh:mm:ss " ) ;
+    SimpleDateFormat ft = new SimpleDateFormat ( "yyyy-MM-dd hh:mm:ss" ) ;
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -36,6 +36,7 @@ public class InsertComplient extends HttpServlet {
 		
 		Date now=new Date();	  
 		String ftString = ft.format(now).toString();  
+		System.out.print(ftString);
 		
 		Complaint.setCreateDate(ftString);
 		Complaint.setCustomerID("1");

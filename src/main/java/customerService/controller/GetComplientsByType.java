@@ -34,7 +34,7 @@ public class GetComplientsByType extends HttpServlet {
 
 			ArrayList<CustomerComplaints> Complients = cs.findComplientsByType(complaintID);
 			request.setAttribute("Complients", Complients);
-			request.getRequestDispatcher("GetComplientsByID.jsp").forward(request, response);
+			request.getRequestDispatcher("SelectComplient.jsp").forward(request, response);
 
 			conn.close();
 

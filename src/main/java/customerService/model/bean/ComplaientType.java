@@ -7,14 +7,14 @@ public class ComplaientType  implements Serializable  {
 
 	private static final long serialVersionUID = 1L;
 	
-	private String complaintID;
+	private String ComplaintID;
 	private String ComplaintName;
 	private String ComplaintDiscription;
 	public String getComplaintID() {
-		return complaintID;
+		return ComplaintID;
 	}
 	public void setComplaintID(String complaintID) {
-		this.complaintID = complaintID;
+		this.ComplaintID = complaintID;
 	}
 	public String getComplaintName() {
 		return ComplaintName;

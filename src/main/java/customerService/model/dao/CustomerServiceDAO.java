@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import customerService.model.bean.ApplyComplient;
 import customerService.model.bean.CustomerComplaints;
 public class CustomerServiceDAO {
 	
@@ -130,6 +132,28 @@ public class CustomerServiceDAO {
 			pstmt.setString(6,Complaint.getTitle());
 			pstmt.setString(7,Complaint.getContent());
 
+			pstmt.execute();
+			pstmt.close();
+
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+	
+	public boolean createApply(ApplyComplient Apply) {
+		try {
+			String SQL = "INSERT INTO [Topic].[dbo].[ComplaintsApply]([ApplyDate],[CustomerID],[QuestionDate],[Content]) VALUES(?,?,?,?)";
+
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			
+			pstmt.setString(1,Apply.getApplyDate());
+			pstmt.setString(2,Apply.getCustomerID());
+			pstmt.setString(3,Apply.getQuestionDate());
+			pstmt.setString(4,Apply.getContent());
+			
 			pstmt.execute();
 			pstmt.close();
 
